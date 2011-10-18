@@ -1405,7 +1405,7 @@ def main(argv=None):
         )
 
     op.add_option(
-        '-f', dest='file', default="Boltfile",
+        '-f', dest='file', default="boltfile.py",
         help="set the name or path of the bolt file [Boltfile]"
         )
 
