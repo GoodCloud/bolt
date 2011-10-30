@@ -1231,6 +1231,9 @@ def init_task_runner(filename, cwd):
             path = join(cwd, filename)
             if exists(path):
                 break
+            elif filename == "Boltfile" and exists(join(cwd, "boltfile.py")):
+                path = join(cwd, "boltfile.py")
+                break
             prev = cwd
             cwd = dirname(cwd)
 
@@ -1405,8 +1408,8 @@ def main(argv=None):
         )
 
     op.add_option(
-        '-f', dest='file', default="boltfile.py",
-        help="set the name or path of the bolt file [boltfile.py]"
+        '-f', dest='file', default="Boltfile",
+        help="set the name or path of the bolt file [Boltfile or boltfile.py]"
         )
 
     op.add_option(
